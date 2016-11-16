@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "SuDungDieuKien";
+}
+
+<h2>SỬ DỤNG ĐIỀU KIỆN TRONG JAVASCRIPT</h2>
+
+Cho x = 50
+<p id="demo"></p><hr />
+Nhiệt độ là : 25 &deg;
+<p id="demo1"></p><hr />
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<script>
+    var luxabu;
+    var thongbao;
+    var c = 50;
+    var doc = 25;
+    if(c >50)
+    {
+        luxabu = "Lớn hơn 50";
+    }
+    else
+    {
+        luxabu = "Nhỏ hơn 50";
+    }
+    if(c == 50)
+    {
+        luxabu = "Bằng 50";
+    }
+    document.getElementById("demo").innerHTML = "Vậy kết quả là: " + luxabu;
+    if(doc == 25)
+    {
+        thongbao = "Nhiệt độ tốt để đi chơi :D";
+    }
+    else if(doc < 25)
+    {
+        thongbao = "Nhiệt độ khá lạnh!!";
+    }
+    else
+    {
+        thongbao = "Nhiệt độ khá nóng!!";
+    }
+    document.getElementById("demo1").innerHTML = thongbao;
+</script>
