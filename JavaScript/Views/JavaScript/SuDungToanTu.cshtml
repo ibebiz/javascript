@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "SuDungToanTu";
+}
+
+<h2>SỬ DỤNG TOÁN TỬ</h2>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+
+<script>
+    var x = 6, y = 18;
+    var z = x + y;
+    //cộng
+    document.getElementById("demo").innerHTML = z;
+
+    //chia
+    var chia = y / x;
+    document.getElementById("demo1").innerHTML = chia;
+
+    //trừ
+    var tru = y - x;
+    document.getElementById("demo2").innerHTML = tru;
+
+    //nhân
+    var nhan = y * x;
+    document.getElementById("demo3").innerHTML = nhan;
+
+    //nối chuỗi
+    var text1 = "What's your", text2 = "name?";
+    document.getElementById("demo4").innerHTML = text1 + " " + text2;
+    
+    var name = "IDE";
+    document.getElementById("demo5").innerHTML = "Hello " + name;
+
+    //đặt điều kiện
+    if(nhan === 108)
+    {
+        alert("Kết quả là đúng");
+    }
+    else
+    {
+        alert("Kết quả là sai !!");
+    }
+
+    if(chia >= nhan)
+    {
+        alert("Kết quả nhân hoặc chia là sai !!");
+    }
+
+    //Toán tử theo bit
+    document.getElementById("demo6").innerHTML = 5 & 1;
+</script>
