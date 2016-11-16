@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "TimHieuSuKienTrongJS";
+}
+
+<h2>TÌM HIỂU VỀ CÁC SỰ KIỆN TRONG JAVASCRIPT</h2>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+<button onclick="cong()">Xem</button>
+
+<script>
+    var a = 3;
+    var b = 4;
+    var c = 5;
+    //đẩy kết quả phép tính vào trong id demo1 và demo khi click 2button The time vs Xem
+    function cong()
+    {
+        document.getElementById('demo1').innerHTML = a + b;
+    }
+</script>
