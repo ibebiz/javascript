@@ -1,0 +1,28 @@
+﻿body {
+    background-color: #FFCCCC;
+}
+#noidung{
+    padding: 3%;
+    background-color: white;
+    margin: 3%;
+    border-top: 10px solid #FF9933;
+    box-shadow: 1px 2px 5px #999999;
+}
+#noidung .p{
+    padding-top: 1%;
+}
+#TieuDe{
+    font-size: 200%
+}
+.Thuoctinh{
+    padding-top: 2%;
+    
+}
+.Thuoctinh h2{
+    font-size: 250%;
+}
+
+
+#Footer{
+    padding-top: 5%;
+}
