@@ -9,7 +9,7 @@ namespace JavaScript.Controllers
     public class JavaScriptController : Controller
     {
         //
-        // GET: /JavaScript/
+        // GET: /JavaScript/abcd
         public ActionResult CachKhaiBaoBien()
         {
             return View();
