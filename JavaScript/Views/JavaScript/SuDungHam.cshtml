@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "SuDungHam";
+}
+
+<h2>SỬ DỤNG HÀM TRONG JAVASCRIPT</h2>
+KQ 1: 
+<p id="a"></p><hr /> KQ 2:
+<p id="b"></p><hr /> KQ 3:
+<p id="c"></p><hr /> KQ 4:
+<p id="d"></p>
+<script>
+    //Nhân
+    function myfc(p1,p2)
+    {
+        return p1 * p2;
+    }
+    document.getElementById("a").innerHTML = myfc(3, 5);
+
+    var x = myfun(4, 3);
+    function myfun(a,b)
+    {
+        return a * b;
+    }
+    document.getElementById("b").innerHTML = x;
+
+    function toCeli(fahre)
+    {
+        return (5 / 9) * (fahre - 32);
+    }
+    document.getElementById("c").innerHTML = toCeli(77);
+
+    var x = toCeli(77);
+    document.getElementById("d").innerHTML = "Nhiệt độ hiện tại là: " + x + "độ C.";
+</script>
