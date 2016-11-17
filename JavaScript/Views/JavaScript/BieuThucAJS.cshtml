@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BieuThucAJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="colors='lightblue'; quantity=5;actu=9; numbers=[1,15,19,20,22]"> 
+        <p style="background-color:{{colors}}"> {{colors}}</p>
+        <input style="background-color:{{colors}}" value="{{quantity + actu}}"/>
+        <p>Các số trong mảng: {{numbers}}</p>
+        <p>Số thứ 4 trong mảng là: {{numbers[3]}}</p>
+    </div>
+</body>
+</html>
