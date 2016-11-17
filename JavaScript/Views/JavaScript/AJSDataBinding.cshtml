@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
-    <div ng-app="myApp" ng-controller="myCtrl">
+    @*<div ng-app="myApp" ng-controller="myCtrl">
         <h1 ng-click="changeName()">{{Ten}}</h1>
     </div>
     <script>
@@ -25,6 +25,17 @@
             }
         })
     </script>
-    <p>click để thay đổi họ</p>
+    <p>click để thay đổi họ</p>*@
+    <div ng-app="myApp" ng-controller="myCtrl">
+        Name: <input ng-model="name"/>
+        <h1>{{name}}</h1>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.Ho = "Nguyễn";
+            $scope.name = "Đạt";
+        })
+    </script>
 </body>
 </html>
