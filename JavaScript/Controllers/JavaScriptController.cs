@@ -14,6 +14,17 @@ namespace JavaScript.Controllers
         {
             return View();
         }
-
+        public ActionResult KhaiNiemCB()
+        {
+            return View();
+        }
+        public ActionResult KhaiNiemCB1()
+        {
+            return View();
+        }
+        public ActionResult KhaiNiemCB2()
+        {
+            return View();
+        }
 	}
 }
