@@ -216,6 +216,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\JavaScript\CachKhaiBaoBien.cshtml" />
+    <Content Include="Views\JavaScript\AngularJSModule.cshtml" />
+    <Content Include="Views\JavaScript\AngularJSModule1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

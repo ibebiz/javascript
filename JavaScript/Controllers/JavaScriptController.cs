@@ -14,6 +14,13 @@ namespace JavaScript.Controllers
         {
             return View();
         }
-
+        public ActionResult AngularJSModule()
+        {
+            return View();
+        }
+        public ActionResult AngularJSModule1()
+        {
+            return View();
+        }
 	}
 }

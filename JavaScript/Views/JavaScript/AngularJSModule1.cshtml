@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AngularJSModule1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" w3-test-directive></div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("w3TestDirective", function () {
+            return {
+                template: "I was made in a directive constructor!"
+            };
+        });
+    </script>
+</body>
+</html>
