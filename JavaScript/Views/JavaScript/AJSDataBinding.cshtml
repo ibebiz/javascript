@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AJSDataBinding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1 ng-click="changeName()">{{Ten}}</h1>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope)
+        {
+            $scope.Ten = "Hải";
+            $scope.changeName = function () {
+                $scope.Ten = "Đạt";
+            }
+        })
+    </script>
+    <p>click để thay đổi họ</p>
+</body>
+</html>
