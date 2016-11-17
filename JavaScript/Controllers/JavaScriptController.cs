@@ -14,6 +14,10 @@ namespace JavaScript.Controllers
         {
             return View();
         }
+        public ActionResult AJSController()
+        {
+            return View();
+        }
 
 	}
 }
