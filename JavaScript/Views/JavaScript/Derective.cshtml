@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Derective</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <w3-test-directive></w3-test-directive>
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("w3TestDirective", function () {
+            return {
+                restrict: "E",
+                template: "<h1>AAAA jjjjjj!!</h1>"
+            };
+        });
+        app.directive("myDirective", function () {
+            return {
+                template: '<h1>Wellcome to angular directive</h1>'
+            };
+        });
+    </script>
+    <div my-directive></div>
+    <p><strong>Note:</strong> By setting the <strong>restrict</strong> property to "A", only the HTML element with the "w3-test-directive" attribute has invoked the directive.</p>
+
+</body>
+</html>
