@@ -14,6 +14,5 @@ namespace JavaScript.Controllers
         {
             return View();
         }
-
 	}
 }

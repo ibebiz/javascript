@@ -5,9 +5,7 @@
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="~/Content/Style/style.css"/>
-    <script src="~/Content/JS/JS.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="/Content/Style/style.css"/>
 </head>
 <body>
     <div class="container" ng-app="myApp" ng-controller="myCtrl">
@@ -38,29 +36,34 @@
             <h2>My Giỏ Hàng</h2>
             <table class="table table-hover">
                 <thead>
-                    <tr><!--chú ý chỗ này!!!-->
+                    <!--<tr><!--chú ý chỗ này!!!-->
                         <th>ID</th>
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                    </tr>
+                   <!-- </tr>-->
                 </thead>
                 <tbody id="ok">
                     <tr ng-repeat="myItem in myItems | reverse">
                         <td>{{myItem.id}}</td>
                         <td>{{myItem.name}}</td>
-                        <td>$ {{ myItem.price | number:0 }}</td>
+                        <td>$ {{ myItem.price}}</td>
                         <td>{{myItem.count}}</td>
                     </tr>
                 </tbody>
             </table>
-            <span class="text-center" ng-show="myItem.length == 0">
+            <span class="text-center" ng-show="myItems.length == 0">
                 Chưa có hàng trong giỏ nha!!
             </span>
             <div class="clearfix"></div>
             <span class="pull-right alert alert-success">Tổng Tiền: $ {{ !totalPrice ? "0" : totalPrice | number:0 }}</span>
-            <button ng-click="removeBasket()" ng-show="myItem.length > 0" class="pull-left alert-danger">Xóa giỏ hàng!</button>
+            <button ng-click="removeBasket()" ng-show="myItems.length > 0" class="pull-left alert alert-danger">Xóa giỏ hàng!</button>
         </div>
     </div>
+    <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+    <script src='/Content/JS/JS.js'></script>
 </body>
 </html>

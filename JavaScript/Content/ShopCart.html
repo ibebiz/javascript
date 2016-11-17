@@ -151,7 +151,7 @@
                         if (window.CP.shouldStopExecution(2)) {
                             break;
                         }
-                        totalPrice += $scope.myItems[i].count * $scope.myItems[i].price;
+                        totalPrice += ($scope.myItems[i].count) * ($scope.myItems[i].price);
                     }
                     window.CP.exitedLoop(2);
                     $scope.totalPrice = totalPrice;

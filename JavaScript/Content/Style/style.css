@@ -9,9 +9,9 @@ span.text-center{
     color: red;
 }
 
-button{
-    font-size: 13px!important;
+ button {
+    font-size: 13px !important;
 }
-button i{
-    font-size: 15px!important;
-}
+    button i{
+        font-size: 15px !important;
+    }
