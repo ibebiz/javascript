@@ -22,7 +22,35 @@ app.controller("myCtrl", function ($scope) {
             price: 2000
         }
     ];
+    $scope.ctitems = [
+        {
+            id: 1,
+            mota: 'Thiết kế quen thuộc \n Thiết kế của chiếc iPhone 7 Plus 256 GB không có nhiều điểm khác biệt so với người anh em iPhone 6s Plus năm ngoái. Mặt lưng chính là điểm nổi bật nhất của  iPhone 7 Plus 256 GB với bộ đôi camera kép lồi hẳn lên.'
+        },
+        {
+            id: 2,
+            mota: 'Đây là mô tả thông tin điện thoại Thông số kỹ thuật \n Màn hình:	IPS LCD, 4", WVGA \n Hệ điều hành:	Windows Phone 8 \n Camera sau:	5 MP \n Camera trước:	Không \n CPU:	Qualcomm MSM8227, 1 GHz \n Bộ nhớ trong:	8 GB \n Hỗ trợ thẻ nhớ:	MicroSD, 64 GB \n Thẻ SIM:	1 SIM, Micro SIM \n Dung lượng pin:	1430 mAh \n Thiết kế:	Pin rời'
+        },
+        {
+            id: 3,
+            mota: 'Điện thoại BLACKBERRY Z10'
+        },
+        {
+            id: 4,
+            mota: 'Đây là mô tả thông tin điện thoại SamSung Galaxy S7 Edge'
+        }
+    ];
     $scope.myItems = [];
+    $scope.ttctItem = [];
+    $scope.ttItem = function (newItem) {
+        
+        for(var i = 0; i < $scope.ctitems.length; i++)
+        {
+            if ($scope.ctitems[i].id == newItem.id) {
+                $scope.ttctItem.push($scope.ctitems[i]);
+            }
+        }
+    };
     $scope.addItem = function (newItem) {
         if ($scope.myItems.length == 0) {
             newItem.count = 1;
