@@ -14,6 +14,9 @@ namespace JavaScript.Controllers
         {
             return View();
         }
-
+        public ActionResult Scope()
+        {
+            return View();
+        }
 	}
 }

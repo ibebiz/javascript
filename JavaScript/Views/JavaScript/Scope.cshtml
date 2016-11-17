@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scope</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl"> 
+        <h1 ng-click="click()">{{name}}</h1>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.name = "Nguyễn Đạt";
+            $scope.click = function () {
+                return $scope.name = "Hoàng Yến Chibi";
+            }
+        });
+    </script>
+</body>
+</html>
