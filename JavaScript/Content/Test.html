@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shopping Fast</title>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="~/Content/Style/style.css"/>
+    <script src="~/Content/JS/JS.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="myApp" ng-controller="myCtrl">
+        <div class="col-md-6">
+            <h2>Sản phẩm</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Transactions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>$ {{ item.price | number:0 }}</td>
+                        <td>
+                            <button ng-click="addItem(item)" class="btn btn-sm btn-info">Add to card<i class="fa fa-shopping-cart" ></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h2>My Giỏ Hàng</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr><!--chú ý chỗ này!!!-->
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="ok">
+                    <tr ng-repeat="myItem in myItems | reverse">
+                        <td>{{myItem.id}}</td>
+                        <td>{{myItem.name}}</td>
+                        <td>$ {{ myItem.price | number:0 }}</td>
+                        <td>{{myItem.count}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="text-center" ng-show="myItem.length == 0">
+                Chưa có hàng trong giỏ nha!!
+            </span>
+            <div class="clearfix"></div>
+            <span class="pull-right alert alert-success">Tổng Tiền: $ {{ !totalPrice ? "0" : totalPrice | number:0 }}</span>
+            <button ng-click="removeBasket()" ng-show="myItem.length > 0" class="pull-left alert-danger">Xóa giỏ hàng!</button>
+        </div>
+    </div>
+</body>
+</html>
