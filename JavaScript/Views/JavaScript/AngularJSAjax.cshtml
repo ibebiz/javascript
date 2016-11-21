@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AngularJSAjax</title>
+    <script>document.write("<base href=\"" + document.location + "\" />");</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script>
+        //var app = angular.module("myApp", []);
+        //app.controller("myCtrl", function ($scope, $http) {
+        //    $http.get('alo.json')
+        //    .then(function (res) {
+        //        $scope.sinhvienk60 = res.data;
+        //    });
+        //});
+        var App = angular.module('App', []);
+
+        App.controller('TodoCtrl', function ($scope, $http) {
+
+            
+            $http.get('/todo.json')
+                 .then(function (res) {
+                     $scope.todos = res.data;
+                 });
+        });
+    </script>
+</head>
+<body ng-app="App" ng-controller="TodoCtrl">
+    @*<div ng-app="myApp" ng-controller="myCtrl">
+
+            <table>
+                <tr>
+                    <th>Ho va Ten</th>
+                    <th>MSSV</th>
+                    <th>Diem thi</th>
+                </tr>
+                <tr ng-repeat="sinhvien in sinhvienk60">
+                    <td>{{ sinhvien.HovaTen }}</td>
+                    <td>{{ sinhvien.MSSV }}</td>
+                    <td>{{ sinhvien.Diemthi }}</td>
+                </tr>
+            </table>
+
+        </div>*@
+
+    <ul>
+        <li ng-repeat="todo in todos">
+            {{todo.millis}} - 
+            <em>{{todo.stamp}}</em> - 
+            <em>{{todo.datetime}}</em> - 
+            <em>{{todo.light}}</em> - 
+            <em>{{todo.temp}}</em> - 
+            <em>{{todo.vcc}}</em>
+        </li>
+    </ul>
+
+</body>
+</html>

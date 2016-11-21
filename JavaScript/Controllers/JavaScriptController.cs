@@ -14,6 +14,21 @@ namespace JavaScript.Controllers
         {
             return View();
         }
+        public ActionResult AngularJSAjax()
+        {
+            return View();
+        }
 
+        //get
+        public ActionResult GetDataResponse()
+        {
+            return View();
+        }
+
+        //post
+        public ActionResult PostDataResponse()
+        {
+            return View();
+        }
 	}
 }
