@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div >
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>CategoryName</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat ="item in itemm">
+                    <td><input name="txtId" value="{{item.Id}}" /></td>
+                    <td><input name="txtTitle" value="{{item.Title}}" /></td>
+                    <td><input name="txtContent" value="{{item.Content}}" /></td>
+                    <td><input name="txtCate" value="{{item.CategoryName}}" /></td>
+                    <td>
+                        <button type="button">Chi Tiết</button>
+                        <button type="button">Sửa</button>
+                        <button type="button" ng-click="xoakhong(item.Id)">Xóa</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            Id
+            Name
+            Books
+        </div>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope, $http) {
+            $http.get("http://192.168.101.119/webapi/book/Index?page=2&size=5").then(function (res) {
+                $scope.itemm = res.data;
+            });
+            $scope.xoakhong = function (id) {
+                //confirm("Chắc chắn muốn xóa không bạn?")
+                if(confirm("Chắc chắn muốn xóa không bạn?"))
+                {
+                    $http.get("http://192.168.101.119/webapi/book/Deletebook/" + id).then(function (res) {
+
+                        alert("OK");
+                    });
+                }
+            };
+        });
+        
+    </script>
+</body>
+</html>

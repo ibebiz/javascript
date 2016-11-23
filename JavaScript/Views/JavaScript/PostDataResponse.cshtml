@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PostDataResponse</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="app" ng-controller="ctrl">
+        @*<h1 ng-repeat="item in myhello">{{item.Id}}, {{item.Title}}, {{item.Price}}, {{item.PackageTypePriceId}}, {{item.CreateDate}}, {{item.CreateBy}}</h1>
+
+        <h3>{{hellof}}</h3>*@
+
+        <button ng-click="sendData()">Send AJAX</button>
+        <br />Data from server: {{user}}
+
+        <button ng-click="sendDL()">Send test</button>
+        <input type="text" name="aloo"/>
+        {{dulieu}}
+        {{todos}}
+    </div>
+    <script>
+
+    var app = angular.module("app", []);
+    app.controller("ctrl", function ($scope, $http) {
+        //$http.get("/JavaScript/PostDataResponse/aloo").then(function (res) {
+        //    $scope.user =res.data;
+        //    console.log($scope.user);
+        //});
+
+        $http.get("http://192.168.101.121/webapi/product/Index").then(function (res) {
+            $scope.todos = res.data;
+            console.log($scope.todos);
+        });
+
+        @*$scope.sendData = function () {
+                var user = { Name: "test", Phone: '24352' };
+                $http.post("/JavaScript/AddUser", user)
+                     .then(function (res) {
+                         $scope.todos = res.data;
+
+                         $scope.user = res.data;
+                     });
+            }*@
+
+
+        //$scope.sendData = function () {
+        //    var user = $http.get("http://ibebizweapi.azurewebsites.net/package/price/1").then(function (res) {
+        //        $scope.user = res.data.PackagePrices;
+        //    });
+        //    $http.post("/JavaScript/AddDL", user).then(function (res) {
+        //        $scope.todos = res.data.PackageTypePrice;
+        //    });
+        //};
+    });
+
+    </script>
+</body>
+</html>
